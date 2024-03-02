@@ -1,22 +1,28 @@
 package ru.diana.university.entity;
 
 public class Student implements Studying,Scientificwork {
-    private String teacher;
-    private String placeOfStudy;
+    private Professor teacher;
+    private University placeOfStudy;
     private String name;
 
-    public Student (String name, String placeOfStudy, String teacher) {
+    public Student (String name) {
         this.name = name;
+    }
+
+    public void setPlaceOfStudy(University placeOfStudy) {
         this.placeOfStudy = placeOfStudy;
+    }
+
+    public void setTeacher(Professor teacher) {
         this.teacher = teacher;
     }
 
-    public void getNameStudents() {
-        System.out.println(name);
+    public String getNameStudents() {
+        return name;
     }
 
     public void informationStudent() {
-        System.out.println(name + " учится в " + placeOfStudy + " на кафедре у " + teacher + "\n");
+        System.out.println(name + " учится в " + placeOfStudy.getNameUniversity() + " на кафедре у " + teacher.getNameProfessor() + "\n");
     }
 
     @Override

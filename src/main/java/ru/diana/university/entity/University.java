@@ -13,6 +13,9 @@ public class University {
         this.workers = new ArrayList<>();
         this.clients = new ArrayList<>();
     }
+    public String getNameUniversity () {
+        return name;
+    }
 
     public void addWorker (Professor worker) {
         workers.add(worker);
@@ -26,11 +29,11 @@ public class University {
         System.out.println("Название университета: " + name);
         System.out.println("В университете работают: " );
         for (Professor worker: workers) {
-            worker.getNameProfessor();
+            System.out.println(worker.getNameProfessor());
         }
         System.out.println("В университете учатся: ");
         for (Student client: clients) {
-            client.getNameStudents();
+            System.out.println(client.getNameStudents());
         }
         System.out.println();
     }

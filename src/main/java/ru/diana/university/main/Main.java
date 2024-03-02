@@ -7,11 +7,19 @@ import ru.diana.university.service.StudyStart;
 
 public class Main {
     public static void main (String[] args) {
-        Student student1 = new Student("Alexandr", "Moscow State University", "prof. Popov");
-        Student student2 = new Student("Diana", "Moscow State University", "prof. Petrov");
-        Professor professor1 = new Professor("prof. Popov", "Moscow State University", "Alexandr");
-        Professor professor2 = new Professor("prof. Petrov", "Moscow State University", "Diana");
         University university = new University("Moscow State University");
+        Student student1 = new Student("Alexandr");
+        Professor professor1 = new Professor("prof. Popov");
+        student1.setPlaceOfStudy(university);
+        student1.setTeacher(professor1);
+        professor1.setLearner(student1);
+        professor1.setPlaceOfWork(university);
+        Student student2 = new Student("Diana");
+        Professor professor2 = new Professor("prof. Petrov");
+        student2.setPlaceOfStudy(university);
+        student2.setTeacher(professor2);
+        professor2.setPlaceOfWork(university);
+        professor2.setLearner(student2);
 
         university.addClient(student1);
         university.addClient(student2);
